@@ -15,19 +15,19 @@ public abstract class BeforAndAfterTest {
     public void setUp() {
 
         //  В CROME
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-//        driver = getWebBrauser("chrome");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get("https://qa-scooter.praktikum-services.ru/");
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver();
+////        driver = getWebBrauser("chrome");
+//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+//        driver.get("https://qa-scooter.praktikum-services.ru/");
 
         //  В FIREFOX
-//       WebDriverManager.firefoxdriver().setup();
-//      driver = new FirefoxDriver();
+       WebDriverManager.firefoxdriver().setup();
+      driver = new FirefoxDriver();
 ////      driver = getWebBrauser("firefox");
-//      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//      driver.get("https://qa-scooter.praktikum-services.ru/");
-    }
+      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+      driver.get("https://qa-scooter.praktikum-services.ru/");
+   }
 
     @After
     //ЗАКРЫТИЕ БРАУЗЕРА

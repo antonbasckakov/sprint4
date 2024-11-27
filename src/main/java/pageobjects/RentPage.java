@@ -27,6 +27,8 @@ public class RentPage {
     private static final By orderButtonRental = By.xpath("//*[@id='root']/div/div[2]/div[3]/button[2]");
     //Заголовок "Хотите оформить заказ?" модального окна подтверждения заказа
     private static final By orderConfirmation = By.xpath("//div[@class='Order_ModalHeader__3FDaJ']");
+    //Кнопка "Посмотреть статус заказа"
+    private static final By orderButtonLookAtTheStatus = By.xpath("//button[text()='Посмотреть статус']");
     private final WebDriver driver;
 
 
@@ -77,6 +79,10 @@ public class RentPage {
     //Пользователь видит текст "Хотите оформить заказ?" модального окна подтверждения заказа
     public boolean isOrderConfirmationVisible() {
         return driver.findElement(orderConfirmation).isDisplayed();
+    }
+    //Пользователь кликает на кнопку "Посмотреть статус" модального окна подтверждения заказа
+    public void clickButtonLookAtTheStatus() {
+        driver.findElement(orderButtonLookAtTheStatus).click();
     }
     // Шаг
     public void fillRentalForm(String date, String color, String comment) {

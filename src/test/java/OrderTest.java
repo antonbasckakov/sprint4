@@ -42,6 +42,7 @@ public class OrderTest extends BeforAndAfterTest {
         return new Object[][]{
                 {"Темная", "Алесса", "Сайлент Хилл", "Автозаводская", "+666666666666", "05.02.2024", "black", "если самокат не понравится она его спалит"},
                 {"Джиперс", "Криперс", "Сельская местность Флориды", "Технопарк", "+666666666666", "06.06.2024", "grey", "Может принять заказ один раз в 23 года"},
+
         };
     }
     //ТЕСТ НИЖНЕЙ КНОПКИ
@@ -59,6 +60,7 @@ public class OrderTest extends BeforAndAfterTest {
         rentPage.fillRentalForm(date, color, comment);
         waitForConfirmButtonAndClick();
         assertOrderConfirmationVisible();
+        rentPage.clickButtonLookAtTheStatus();
     }
 
     @Test
@@ -73,6 +75,7 @@ public class OrderTest extends BeforAndAfterTest {
         rentPage.fillRentalForm(date, color, comment);
         waitForConfirmButtonAndClick();
         assertOrderConfirmationVisible();
+        rentPage.clickButtonLookAtTheStatus();
     }
 
     private void initializePageObjects() {
